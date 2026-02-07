@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Failure Prediction</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Heart Failure Death Event Prediction</h2>
+
+            <form action="/predict" method="post">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="number" class="form-control" name="age" placeholder="Age" required>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" name="anaemia" placeholder="Anaemia (0/1)" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="number" class="form-control" name="creatinine_phosphokinase" placeholder="CPK Level" required>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" name="diabetes" placeholder="Diabetes (0/1)" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="number" class="form-control" name="ejection_fraction" placeholder="Ejection Fraction (%)" required>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" name="high_blood_pressure" placeholder="High BP (0/1)" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="number" class="form-control" name="platelets" placeholder="Platelets" required>
+                    </div>
+                    <div class="col">
+                        <input type="number" step="any" class="form-control" name="serum_creatinine" placeholder="Serum Creatinine" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="number" class="form-control" name="serum_sodium" placeholder="Serum Sodium" required>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" name="sex" placeholder="Sex (0=Female,1=Male)" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="number" class="form-control" name="smoking" placeholder="Smoking (0/1)" required>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" name="time" placeholder="Follow-up Time (days)" required>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+                </div>
+            </form>
+
+            <div class="mt-4 text-center">
+                <h4 class="text-danger">{{ prediction_text }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
